@@ -40,7 +40,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # ----
-design/*
+design
 MyNote.txt
 README-template.md
 README.md
+html.html
