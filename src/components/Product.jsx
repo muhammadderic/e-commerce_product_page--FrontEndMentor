@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Product() {
   return (
     <div className="container">
@@ -29,11 +31,15 @@ export default function Product() {
           </div>
           <div className="product__right-bottom">
             <div className="product__quantity">
-              <img className="minus-icon" src="/images/icon-minus.svg" alt="reduce shopping items" />
+              <div className="icon-quantity__wrapper">
+                <img className="minus-icon" src="/images/icon-minus.svg" alt="reduce shopping items" />
+              </div>
               <p className="quantity">0</p>
-              <img className="plus-icon" src="/images/icon-plus.svg" alt="add more shopping items" />
+              <div className="icon-quantity__wrapper">
+                <img className="plus-icon" src="/images/icon-plus.svg" alt="add more shopping items" />
+              </div>
             </div>
-            <button className="btn">Add to cart</button>
+            <Button text="Add to cart" />
           </div>
         </div>
       </div>
