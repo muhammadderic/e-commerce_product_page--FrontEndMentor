@@ -80,3 +80,39 @@ a {
   height: 2.3rem;
   margin-left: 2.5rem;
 }
+
+/* =================== */
+/* ===== PRODUCT ===== */
+/* =================== */
+.product {
+  padding: 3rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.product__left,
+.product__right {
+  padding: 2rem;
+}
+
+.product__left {
+  border: 1px solid red;
+}
+
+.product__main {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.product__thumbnails {
+  border: 1px solid red;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.product__thumbnail {
+  width: 100px;
+  border-radius: 1rem;
+}
