@@ -1,11 +1,24 @@
+import { useState } from "react";
 import Button from "./Button";
+import ProductModal from "./ProductModal";
 
 export default function Product() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showProductModal = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
+  }
+
+  const closeProductModal = (e) => {
+    setIsOpen(e);
+  }
+
   return (
     <div className="container">
       <div className="product wrapper">
         <div className="product__left">
-          <img src="/images/image-product-1.jpg" alt="" className="product__main" />
+          <img src="/images/image-product-1.jpg" alt="" className="product__main" onClick={showProductModal} />
           <div className="product__thumbnails">
             <img src="/images/image-product-1-thumbnail.jpg" alt="" className="product__thumbnail" />
             <img src="/images/image-product-2-thumbnail.jpg" alt="" className="product__thumbnail" />
@@ -43,6 +56,7 @@ export default function Product() {
           </div>
         </div>
       </div>
+      {isOpen && <ProductModal closeProductModal={closeProductModal} />}
     </div>
   )
 }
