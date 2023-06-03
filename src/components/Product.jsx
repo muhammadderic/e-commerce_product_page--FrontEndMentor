@@ -23,10 +23,10 @@ export default function Product() {
             durable rubber outer sole, they'll withstand everything the weather can offer.
           </p>
           <div className="product__price">
-            <p className="price__disc">
+            <div className="price__disc">
               <p className="current-price">$125.00</p>
               <p className="discount">50%</p>
-            </p>
+            </div>
             <p className="before-price">$250.00</p>
           </div>
           <div className="product__right-bottom">
