@@ -1,6 +1,6 @@
 import "../styles/product_modal.css";
 
-export default function ProductModal({ closeProductModal }) {
+export default function ProductModal({ closeProductModal, mainImage }) {
   return (
     <>
       <div className="overlay">
@@ -11,7 +11,7 @@ export default function ProductModal({ closeProductModal }) {
           <div className="modal__image">
             <div className="main-product__wrapper">
               <svg className="modal__main-picture-icon main-picture-icon__previous" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
-              <img src="/images/image-product-1.jpg" alt="" className="product__main" />
+              <img src={`/images/image-product-${mainImage}.jpg`} alt="" className="product__main" />
               <svg className="modal__main-picture-icon main-picture-icon__next" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
             </div>
             <div className="product__thumbnails-modal">

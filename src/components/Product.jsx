@@ -4,6 +4,7 @@ import ProductModal from "./ProductModal";
 
 export default function Product() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mainImage, setMainImage] = useState(1);
 
   const showProductModal = (e) => {
     e.preventDefault();
@@ -19,12 +20,12 @@ export default function Product() {
     <div className="container">
       <div className="product wrapper">
         <div className="product__left">
-          <img src="/images/image-product-1.jpg" alt="" className="product__main" onClick={showProductModal} />
+          <img src={`/images/image-product-${mainImage}.jpg`} alt="" className="product__main" onClick={showProductModal} />
           <div className="product__thumbnails">
-            <img src="/images/image-product-1-thumbnail.jpg" alt="" className="product__thumbnail" />
-            <img src="/images/image-product-2-thumbnail.jpg" alt="" className="product__thumbnail" />
-            <img src="/images/image-product-3-thumbnail.jpg" alt="" className="product__thumbnail" />
-            <img src="/images/image-product-4-thumbnail.jpg" alt="" className="product__thumbnail" />
+            <img src="/images/image-product-1-thumbnail.jpg" alt="" className="product__thumbnail" onClick={() => setMainImage(1)} />
+            <img src="/images/image-product-2-thumbnail.jpg" alt="" className="product__thumbnail" onClick={() => setMainImage(2)} />
+            <img src="/images/image-product-3-thumbnail.jpg" alt="" className="product__thumbnail" onClick={() => setMainImage(3)} />
+            <img src="/images/image-product-4-thumbnail.jpg" alt="" className="product__thumbnail" onClick={() => setMainImage(4)} />
           </div>
         </div>
         <div className="product__right">
@@ -57,7 +58,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      {isOpen && <ProductModal closeProductModal={closeProductModal} />}
+      {isOpen && <ProductModal closeProductModal={closeProductModal} mainImage={mainImage} />}
     </div>
   )
 }
