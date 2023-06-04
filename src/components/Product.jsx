@@ -11,7 +11,8 @@ export default function Product() {
   }
 
   const closeProductModal = (e) => {
-    setIsOpen(e);
+    e.stopPropagation();
+    setIsOpen(false);
   }
 
   return (

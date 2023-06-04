@@ -34,6 +34,12 @@
   fill: white;
 }
 
+.modal__close-icon:hover path,
+.main-picture-icon__previous:hover path,
+.main-picture-icon__next:hover path {
+  stroke: hsl(26, 100%, 55%);
+}
+
 .modal__main-picture-icon {
   padding: 1rem;
   background-color: #fff;
@@ -55,6 +61,11 @@
   width: 100%;
   display: flex;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.product__thumbnail-modal:hover {
+  filter: url('#white') grayscale(0.2) sepia(0) brightness(1.2);
 }
 
 .thumbnail__wrapper {
