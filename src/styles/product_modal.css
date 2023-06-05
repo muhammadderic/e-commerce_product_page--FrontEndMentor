@@ -45,7 +45,7 @@
   background-color: #fff;
   position: absolute;
   border-radius: 50%;
-  top: 40%;
+  top: 50%;
   cursor: pointer;
 }
 
@@ -55,6 +55,22 @@
 
 .main-picture-icon__next {
   right: -15px;
+}
+
+.carousel {
+  position: relative;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 .product__thumbnails-modal {
@@ -78,3 +94,5 @@
   border-radius: 1rem;
   box-sizing: border-box;
 }
+
+/* ==================== */
