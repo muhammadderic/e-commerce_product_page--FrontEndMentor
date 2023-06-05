@@ -20,7 +20,7 @@ const photos = [
   },
 ];
 
-export default function ProductModal({ closeProductModal, mainImage }) {
+export default function ProductModal({ closeProductModal }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {

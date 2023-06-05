@@ -69,7 +69,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      {isOpen && <ProductModal closeProductModal={closeProductModal} mainImage={mainImage} />}
+      {isOpen && <ProductModal closeProductModal={closeProductModal} />}
     </div>
   )
 }

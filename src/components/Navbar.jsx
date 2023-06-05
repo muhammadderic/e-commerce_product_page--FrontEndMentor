@@ -1,4 +1,15 @@
+import { useState } from "react";
+import CartBasket from "./CartBasket";
+
 export default function Navbar() {
+  const [isOpenCard, setIsOpenCart] = useState(false);
+
+
+  const openCartModal = () => {
+    console.log(isOpenCard);
+    setIsOpenCart(!isOpenCard);
+  }
+
   return (
     <div className="container">
       <div className="navbar wrapper">
@@ -23,9 +34,12 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="navbar__right">
-          <img src="/images/icon-cart.svg" alt="cart icon to store the items you want to buy" className="icon-cart" />
+          <img onClick={openCartModal} src="/images/icon-cart.svg" alt="cart icon to store the items you want to buy" className="icon-cart" />
           <img src="/images/image-avatar.png" alt="" className="navbar__profile" />
         </div>
+      </div>
+      <div className="navbar__bottom">
+        {isOpenCard && <CartBasket />}
       </div>
     </div>
   )

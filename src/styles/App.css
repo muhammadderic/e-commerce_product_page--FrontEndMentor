@@ -93,6 +93,14 @@ a {
   border: 2px solid var(--orange);
 }
 
+.navbar__bottom {
+  /* border: 1px solid red; */
+  height: 0px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
 /* =================== */
 /* ===== PRODUCT ===== */
 /* =================== */
@@ -123,6 +131,7 @@ a {
 .product__thumbnail {
   width: 100px;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .product__right {

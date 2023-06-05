@@ -1,0 +1,26 @@
+.cart__modal {
+  width: 300px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  /* Center the modal */
+  top: 120px;
+  right: -100px;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.cart__title {
+  margin: 0;
+  padding: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.cart__content {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
