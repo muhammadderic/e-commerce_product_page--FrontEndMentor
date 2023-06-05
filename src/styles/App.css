@@ -84,6 +84,13 @@ a {
 .navbar__profile {
   height: 2.3rem;
   margin-left: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.navbar__profile:hover {
+  border: 2px solid var(--orange);
 }
 
 /* =================== */
@@ -213,6 +220,10 @@ a {
   border-radius: .3rem;
   border: none;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--pale-orange);
 }
 
 .btn__icon path {
