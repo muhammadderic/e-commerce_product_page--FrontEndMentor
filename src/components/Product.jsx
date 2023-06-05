@@ -3,6 +3,7 @@ import Button from "./Button";
 import ProductModal from "./ProductModal";
 
 export default function Product() {
+  const [quantityProduct, setQuantityProduct] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [mainImage, setMainImage] = useState(1);
 
@@ -14,6 +15,16 @@ export default function Product() {
   const closeProductModal = (e) => {
     e.stopPropagation();
     setIsOpen(false);
+  }
+
+  const increseQuantity = () => {
+    setQuantityProduct(quantityProduct + 1);
+  }
+
+  const decreseQuantity = () => {
+    if (quantityProduct > 0) {
+      setQuantityProduct(quantityProduct - 1);
+    }
   }
 
   return (
@@ -46,11 +57,11 @@ export default function Product() {
           </div>
           <div className="product__right-bottom">
             <div className="product__quantity">
-              <div className="icon-quantity__wrapper">
+              <div className="icon-quantity__wrapper" onClick={decreseQuantity}>
                 <img className="minus-icon" src="/images/icon-minus.svg" alt="reduce shopping items" />
               </div>
-              <p className="quantity">0</p>
-              <div className="icon-quantity__wrapper">
+              <p className="quantity">{quantityProduct}</p>
+              <div className="icon-quantity__wrapper" onClick={increseQuantity}>
                 <img className="plus-icon" src="/images/icon-plus.svg" alt="add more shopping items" />
               </div>
             </div>
