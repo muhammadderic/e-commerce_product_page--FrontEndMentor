@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ProductContext } from "../context/ProductContext";
 import Button from "./Button";
 import ProductModal from "./ProductModal";
+
+const product = {
+  title: "Fall Limited Edition Sneakers",
+  currentPrice: 125,
+  beforePrice: 250,
+  discount: 50,
+  src: "/images/image-product-1-thumbnail.jpg"
+}
 
 export default function Product() {
   const [quantityProduct, setQuantityProduct] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [mainImage, setMainImage] = useState(1);
+  const { dispatch } = useContext(ProductContext);
+
+  const totalProduct = useContext(ProductContext);
 
   const showProductModal = (e) => {
     e.preventDefault();
@@ -13,17 +25,30 @@ export default function Product() {
   }
 
   const closeProductModal = (e) => {
-    e.stopPropagation();
+    e.preventDefault();
     setIsOpen(false);
   }
 
-  const increseQuantity = () => {
+  const increseQuantity = (e) => {
+    e.preventDefault();
     setQuantityProduct(quantityProduct + 1);
   }
 
-  const decreseQuantity = () => {
+  const decreseQuantity = (e) => {
+    e.preventDefault();
     if (quantityProduct > 0) {
       setQuantityProduct(quantityProduct - 1);
+    }
+  }
+
+  const addToCart = () => {
+    if (totalProduct.state === null && quantityProduct > 0) {
+      dispatch({
+        type: "ADD_PRODUCT", payload: {
+          ...product,
+          quantityProduct,
+        }
+      });
     }
   }
 
@@ -42,7 +67,7 @@ export default function Product() {
         <div className="product__right">
           <p className="text__company">Sneaker Company</p>
           <h1 className="product__title">
-            Fall Limited Edition Sneakers
+            {product.title}
           </h1>
           <p className="product__detail-text">
             These low-profile sneakers are your perfect casual wear companion. Featuring a
@@ -50,10 +75,10 @@ export default function Product() {
           </p>
           <div className="product__price">
             <div className="price__disc">
-              <p className="current-price">$125.00</p>
-              <p className="discount">50%</p>
+              <p className="current-price">{`$${product.currentPrice}.00`}</p>
+              <p className="discount">{`${product.discount}%`}</p>
             </div>
-            <p className="before-price">$250.00</p>
+            <p className="before-price">{`$${product.beforePrice}.00`}</p>
           </div>
           <div className="product__right-bottom">
             <div className="product__quantity">
@@ -65,7 +90,7 @@ export default function Product() {
                 <img className="plus-icon" src="/images/icon-plus.svg" alt="add more shopping items" />
               </div>
             </div>
-            <Button text="Add to cart" />
+            <Button text="Add to cart" clicked={addToCart} />
           </div>
         </div>
       </div>

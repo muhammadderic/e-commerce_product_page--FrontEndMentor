@@ -6,7 +6,6 @@ export default function Navbar() {
 
 
   const openCartModal = () => {
-    console.log(isOpenCard);
     setIsOpenCart(!isOpenCard);
   }
 
