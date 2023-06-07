@@ -261,6 +261,7 @@ a {
 @media (max-width: 376px) {
   body {
     width: 375px;
+    box-sizing: border-box;
   }
 
   * {
@@ -269,51 +270,38 @@ a {
 
   .container {
     padding: 0;
+    margin: 0 auto;
   }
 
   .wrapper {
     margin: 0;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* ================== */
   /* ===== NAVBAR ===== */
   /* ================== */
   .navbar {
-    border: 1px solid red;
     align-items: center;
     padding: 2rem 2rem;
+    box-sizing: border-box;
+    border: 1px solid blue;
     width: 100%;
     box-sizing: border-box;
-    /*  */
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--very-dark-blue);
-  }
-
-  .navbar__left {
-    height: var(--navbar-height);
-    display: inherit;
-    align-items: center;
   }
 
   .navbar__logo {
-    height: 1.2rem;
-    margin-right: 1rem;
-    padding: 1rem 0;
+    height: 2rem;
   }
 
   .menu {
-    margin: 0;
-    display: inherit;
-    list-style: none;
-    /* BOTTOM */
     padding: 0;
     height: 100%;
     width: 70%;
     flex-direction: column;
     position: fixed;
-    /* transform: translateX(100%); */
     transform: translateX(-100%);
     transition: transform 0.2s;
     top: 0;
@@ -322,11 +310,9 @@ a {
     z-index: 99;
     background: #fff;
     padding-top: 10rem;
-    /*  */
   }
 
   .menu__item {
-    /* BOTTOM */
     margin: 0;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -335,43 +321,17 @@ a {
   }
 
   .menu__item a {
-    /* BOTTOM */
     margin: 0;
     font-size: 2rem;
     padding: 0;
   }
 
-  .menu__item a:hover {
-    border-bottom: 2px solid var(--orange);
-  }
-
-  .navbar__right {
-    display: inherit;
-    align-items: center;
-  }
-
   .icon-cart {
-    height: 1.2rem;
-    cursor: pointer;
+    height: 2rem;
   }
 
   .navbar__profile {
-    height: 2.3rem;
-    margin-left: 2.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-
-  .navbar__profile:hover {
-    border: 2px solid var(--orange);
-  }
-
-  .navbar__bottom {
-    height: 0px;
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
+    height: 3rem;
   }
 
   /* =================== */
@@ -383,15 +343,18 @@ a {
     flex-direction: column;
   }
 
-  .product__left,
-  .product__right {
+  .product__left {
     padding: 0rem;
   }
 
+  .product__right {
+    width: 100%;
+    padding: 0 2rem 5rem 2rem;
+    box-sizing: border-box;
+  }
+
   .product__main {
-    border: 1px solid red;
-    /*  */
-    width: 125%;
+    width: 100%;
     border-radius: 1rem;
     cursor: pointer;
   }
@@ -414,78 +377,52 @@ a {
   }
 
   .product__price {
-    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .price__disc {
     margin: 0;
     display: flex;
+    /*  */
+    align-items: center;
   }
 
   .current-price {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 3rem;
   }
 
   .discount {
-    margin: 0;
-    margin-left: 2rem;
-    padding: .5rem;
-    font-weight: bold;
-    background-color: var(--pale-orange);
-    color: var(--orange);
-    border-radius: .3rem;
+    display: flex;
+    align-items: center;
   }
 
   .before-price {
-    margin: 0 0 2rem 0;
-    font-weight: bold;
-    color: var(--very-dark-blue);
-  }
-
-  .product__right-bottom {
-    display: flex;
-  }
-
-  .product__quantity {
-    width: 30%;
-    margin-right: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--light-greyish-blue);
-    box-sizing: border-box;
-    border-radius: .3rem;
-  }
-
-  .icon-quantity__wrapper {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .quantity {
     margin: 0;
   }
 
-  .btn {
-    padding: 1rem 2rem;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    font-weight: bold;
-    background-color: var(--orange);
-    color: #fff;
-    border-radius: .3rem;
-    border: none;
+  .product__right-bottom {
+    flex-direction: column;
   }
 
-  .btn:hover {
-    background-color: var(--pale-orange);
+  .product__quantity {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .minus-icon,
+  .plus-icon {
+    width: 50px;
+  }
+
+  .quantity {
+    font-weight: bold;
+  }
+
+  .btn {
+    padding: 2rem 2rem;
   }
 
   .btn__icon path {
