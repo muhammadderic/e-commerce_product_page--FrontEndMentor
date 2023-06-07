@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My solution URL here](https://your-solution-url.com)
+- Solution URL: [My solution URL](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6/hub)
 - Live Site URL: [My live site URL](https://ecommerce-product-bymde.netlify.app/)
 
 ## My process
